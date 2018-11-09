@@ -56,6 +56,7 @@ Driver = FreeTDS
 Description = ODBC connection via FreeTDS
 Trace = No
 Server = sqlserver
+Port = 1433
 Database = <name of your database>
 ```
 Now you may test the connection to out data source works by running 
