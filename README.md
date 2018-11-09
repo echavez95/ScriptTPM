@@ -1,4 +1,5 @@
 # ScriptTPM
+1. Install crontab https://www.raspberrypi.org/documentation/linux/usage/cron.md
 2. Install required packages under Ubuntu
 These are the things we are going to need:
 
