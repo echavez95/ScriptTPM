@@ -25,16 +25,17 @@ ip = s.getsockname()[0]
 s.close()
 
 ##obtener hora
-now = datetime.datetime.now()
-
+now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
 cursor = cnxn.cursor()
-sql = "exec AUT.VERIFICAR_PROGRAMACION_TPM_SP '%s', %d" % (ip, now.hour)
+sql = "exec AUT.VERIFICAR_PROGRAMACION_TPM_SP '%s', '%s'" % (ip, now)
 cursor.execute(sql)
 result=cursor.fetchone()
+print result[0]
+print result[1]
 
-if result[0]=='SI':
-    GPIO.output(pin,False)
-    retraso = result[1]*60
-    time.sleep(retraso)
-    GPIO.output(pin,True)
+#if result[0]=='SI':
+#    GPIO.output(pin,False)
+#    retraso = result[1]*60
+#    time.sleep(retraso)
+#    GPIO.output(pin,True)
 exit(0)
